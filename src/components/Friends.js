@@ -8,12 +8,21 @@ import React, { Component } from 'react';
          age: '',
          email: ''
       };
-      //console.log(this.props);
    }
 
-    handleChange = e => {
-      this.setState({ [e.target.name]: e.target.value });
-   };
+   updateFriend = (id,updatedFriend) => {
+      axios
+      .post(`http://localhost:5000/friends/${id}`, updatedFriend)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  }
+
+   deleteFriend = id => {
+      axios
+      .post(`http://localhost:5000/friends/${id}`, id)
+      .then(res => console.log(res))
+      .catch(err => console.log(err))
+  }
 
     render() {
       return (

@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import FriendsList from './components/FriendsList';
-
+import FriendList from './components/FriendsList';
+import { Route } from 'react-router-dom';
 
  function App() {
   return (
     <div className="App">
-      <FriendsList/>
+      < Route exact path = "/" component = {FriendList} />
     </div>
   );
 }
